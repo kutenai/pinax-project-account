@@ -1,12 +1,10 @@
 import os
+from unipath import Path
 
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
 BASE_DIR = PACKAGE_ROOT
-
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
     "default": {
@@ -64,7 +62,7 @@ STATIC_URL = "/site_media/static/"
 
 # Additional locations of static files
 STATICFILES_DIRS = [
-    os.path.join(PACKAGE_ROOT, "static"),
+    os.path.join(PACKAGE_ROOT, "../static"),
 ]
 
 # List of finder classes that know how to find static files in
@@ -113,7 +111,7 @@ ROOT_URLCONF = "{{ project_name }}.urls"
 WSGI_APPLICATION = "{{ project_name }}.wsgi.application"
 
 TEMPLATE_DIRS = [
-    os.path.join(PACKAGE_ROOT, "templates"),
+    os.path.join(PACKAGE_ROOT, "../templates"),
 ]
 
 INSTALLED_APPS = [
@@ -168,7 +166,7 @@ LOGGING = {
 }
 
 FIXTURE_DIRS = [
-    os.path.join(PROJECT_ROOT, "fixtures"),
+    os.path.join(PROJECT_ROOT, "../../fixtures"),
 ]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
