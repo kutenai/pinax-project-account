@@ -16,5 +16,7 @@ else
 
 fi
 
+pushd {{ project_name }}
 python manage.py "$@"
+popd
 
