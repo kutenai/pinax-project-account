@@ -62,7 +62,7 @@ STATIC_URL = "/site_media/static/"
 
 # Additional locations of static files
 STATICFILES_DIRS = [
-    os.path.join(PACKAGE_ROOT, "../static"),
+    os.path.join(PACKAGE_ROOT, "../../../webapp/static"),
 ]
 
 # List of finder classes that know how to find static files in
@@ -111,7 +111,7 @@ ROOT_URLCONF = "{{ project_name }}.urls"
 WSGI_APPLICATION = "{{ project_name }}.wsgi.application"
 
 TEMPLATE_DIRS = [
-    os.path.join(PACKAGE_ROOT, "../templates"),
+    os.path.join(PACKAGE_ROOT, "../../../webapp/templates"),
 ]
 
 INSTALLED_APPS = [
