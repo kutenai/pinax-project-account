@@ -16,7 +16,7 @@ else
 
 fi
 
-pushd django_root
+pushd {{cookiecutter.app_name}}
 python manage.py "$@"
 popd
 

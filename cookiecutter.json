@@ -4,5 +4,6 @@
     "email": "ed@sharpertool.com",
     "repo_name": "helloworld",
     "app_name": "application",
-    "version": "0.1.0"
+    "version": "0.1.0",
+    "secret_key": "just_a_temporary_key"
 }

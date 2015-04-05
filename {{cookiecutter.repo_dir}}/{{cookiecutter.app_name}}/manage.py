@@ -17,7 +17,7 @@ if __name__ == "__main__":
     if local_exists():
         os.environ.setdefault("DJANGO_SETTINGS_MODULE", "local_config")
     else:
-        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ cookiecutter.app_name }}.settings.dev")
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{cookiecutter.app_name}}.settings.dev")
 
     from django.core.management import execute_from_command_line
 
