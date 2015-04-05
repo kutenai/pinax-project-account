@@ -1,10 +1,11 @@
 import os
 from unipath import Path
 
+PROJECT_ROOT = Path(__file__).ancestor(2)
+PACKAGE_ROOT = PROJECT_ROOT.ancestor(1)
+REPO_ROOT = PACKAGE_ROOT.ancestor(1)
 
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
-PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
-BASE_DIR = PACKAGE_ROOT
+print("Project Root:{}\nPackage Root:{}\nRepo Root:{}\n".format(PROJECT_ROOT, PACKAGE_ROOT, REPO_ROOT))
 
 DATABASES = {
     "default": {
@@ -60,9 +61,9 @@ STATIC_ROOT = os.path.join(PACKAGE_ROOT, "site_media", "static")
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = "/site_media/static/"
 
-# Additional locations of static files
+# Additional locations of static files, if any.
 STATICFILES_DIRS = [
-    os.path.join(PACKAGE_ROOT, "../../../webapp/static"),
+    PACKAGE_ROOT.child('static'),
 ]
 
 # List of finder classes that know how to find static files in
@@ -105,13 +106,13 @@ MIDDLEWARE_CLASSES = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "{{ project_name }}.urls"
+ROOT_URLCONF = "{{ cookiecutter.app_name }}.urls"
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = "{{ project_name }}.wsgi.application"
+WSGI_APPLICATION = "{{ cookiecutter.app_name }}.wsgi.application"
 
 TEMPLATE_DIRS = [
-    os.path.join(PACKAGE_ROOT, "../../../webapp/templates"),
+    PACKAGE_ROOT.child("templates"),
 ]
 
 INSTALLED_APPS = [
@@ -129,7 +130,7 @@ INSTALLED_APPS = [
     "metron",
 
     # project
-    "{{ project_name }}",
+    "{{ cookiecutter.app_name }}",
     "webapp",
 
     # theme
@@ -169,7 +170,7 @@ LOGGING = {
 }
 
 FIXTURE_DIRS = [
-    os.path.join(PROJECT_ROOT, "../../fixtures"),
+    REPO_ROOT.child("fixtures"),
 ]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

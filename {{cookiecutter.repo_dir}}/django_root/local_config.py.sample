@@ -1,7 +1,7 @@
 print("Bootstrap from {}".format(__file__))
 
 # Do an import * on the module version you would like to use
-from {{ project_name }}.settings.dev import *
+from {{ cookiecutter.app_name }}.settings.dev import *
 
 #EMAIL_HOST_PASSWORD = '...'
 

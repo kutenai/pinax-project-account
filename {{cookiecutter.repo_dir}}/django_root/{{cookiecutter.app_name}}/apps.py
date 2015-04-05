@@ -4,7 +4,7 @@ from django.utils.importlib import import_module
 
 class AppConfig(BaseAppConfig):
 
-    name = "webapp"
+    name = "{{cookiecutter.app_name}}"
 
     def ready(self):
         import_module("webapp.receivers")
