@@ -1,5 +1,7 @@
 print("Loading development settings.")
 
-DEBUG = False
+from .base import *
+
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
