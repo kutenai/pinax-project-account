@@ -123,10 +123,6 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "django.contrib.staticfiles",
 
-    # theme
-    "bootstrapform",
-    "pinax_theme_bootstrap",
-
     # external
     "account",
     "eventlog",
@@ -134,6 +130,13 @@ INSTALLED_APPS = [
 
     # project
     "{{ project_name }}",
+    "webapp",
+
+    # theme
+    # Must have after the project, otherwise site_base won't be found.
+    "bootstrapform",
+    "pinax_theme_bootstrap",
+
 ]
 
 # A sample logging configuration. The only tangible logging
